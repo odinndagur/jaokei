@@ -29,7 +29,7 @@ function Box(props) {
 }
 
 function AegirHead (props){
-  const obj = useLoader(OBJLoader, '/head3d.obj')
+  const obj = useLoader(OBJLoader, '/jaokei/head3d.obj')
   const ref = useRef()
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)

@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('./ingolfsstraeti2-transformed.glb')
+  const { nodes, materials } = useGLTF('/jaokei/ingolfsstraeti2-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.kanina.geometry} material={materials.Floor_material} position={[11.71, 2.3, -1.4]} rotation={[0, 0.87, 0]} scale={0.78} />
