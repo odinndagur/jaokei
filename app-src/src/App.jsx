@@ -3,7 +3,10 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { useLoader } from '@react-three/fiber';
-import { Model } from './Ingolfsstraeti2';
+// import { Model } from './Ingolfsstraeti2';
+// import { Model } from './Test1';
+import { Model } from './Test2';
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
 
 function Box(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -58,10 +61,18 @@ export default function App() {
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
       <Model/>
+      {/* <AegirHead position={[9,3,0]} /> */}
+      <AegirHead position={[0,1.5,0]} />
       <Box position={[-1.2, 0, 0]} scale={0.2} />
       <Box position={[1.2, 0, 0]} />
-      <AegirHead position={[9,3,0]} />
       <OrbitControls />
+
+      {/* <EffectComposer>
+        <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+        <Noise opacity={0.02} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+      </EffectComposer> */}
     </Canvas>
   )
 }
